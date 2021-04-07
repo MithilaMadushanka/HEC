@@ -1,5 +1,11 @@
 <?php 
         require_once('../php scripts/dbConnection.php');
+        $msg =0;
+
+        if(isset($_GET['msg']))
+        {
+            $msg=$_GET['msg'];
+        }
 
         if (isset($_POST['upload_paper'])) {
           
@@ -15,10 +21,10 @@
             $query="INSERT INTO papers(header,description,tubmail) VALUES('$header','$description','$upload_file')";
             $result=mysqli_query($con,$query);
             if ($result) {
-                echo "uploaded";
+                header("Location:uploadPaper?msg=200");
             }
             else
-                echo "Not uploaded";
+                header("Location:uploadPaper?msg=400");
       }
  ?>
 <!DOCTYPE html>
@@ -32,9 +38,11 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Upload Paper</title>
+  <title>හදව‌තේ ඉංජිනේරූ පංතිය</title>
+  <link href="../img/logo.jpg" rel="icon">
 
   <!-- Custom fonts for this template-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -219,35 +227,61 @@
           <div class="row">
                        
             <!-- Pending Requests Card Example -->
-            <div class="col-md-6 mb-4">
-                <h3><font color="green">Upload Papers</font></h3>
-                  <br>
-                  <form  action="uploadPaper.php" method="post" enctype="multipart/form-data">
-                        <table class="table table-white">
-                              <tr><td>Paper Header</td></tr> 
-                              <tr><td><input type='text' class="form-control" name="paper_header" required></td></tr> 
-                              <tr><td>Paper Description</td></tr> 
-                              <tr><td><input type='text' class="form-control" name="paper_description" required></td></tr>
-                              <tr><td>Paper file</td></tr> 
-                              <tr><td><input type='file' class="form-control" name="file"></td></tr>
-                              <tr><td><input type='submit' class="btn btn-success" name="upload_paper" value="Upload" accept="application/pdf" ></td></tr>
-                        </table>
-                  </form>
-                  <br>
-                  <font>If you want to remove paper the try follow link</font><br><br>
-                  <h3><font color="dark-pink">Remove Papers</font></h3>
-                  <br>
-                  <table class="table table-white">
-                      <tr><td>Paper Header</td></tr> 
-                      <tr><td><input type='text' class="form-control" name=""></td></tr> 
+            <div class="col-md-12 mb-4">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                            <br>
+                            <h3><font color="green">Upload Papers</font></h3>
+                            <br>
+                            <?php
+                            if($msg==200)
+                            {
+                                echo "<div class='alert alert-success' role='alert'>
+                                            Video file uploaded SuccessFully!.
+                                        </div>";
+                            }
+
+                            if($msg==400)
+                            {
+                                echo "<div class='alert alert-danger' role='alert'>
+                                            Unable to upload video file.
+                                        </div>";
+                            }
+                            ?>
+                            <form  action="uploadPaper.php" method="post" enctype="multipart/form-data">
+                                <table class="table table-white">
+                                    <tr><td>Paper Header</td></tr>
+                                    <tr><td><input type='text' class="form-control" name="paper_header" required></td></tr>
+                                    <tr><td>Paper Description</td></tr>
+                                    <tr><td><input type='text' class="form-control" name="paper_description" required></td></tr>
+                                    <tr><td>Paper file</td></tr>
+                                    <tr><td><input type='file' class="form-control" name="file"></td></tr>
+                                    <tr><td><input type='submit' class="btn btn-success" name="upload_paper" value="Upload" accept="application/pdf" ></td></tr>
+                                </table>
+                            </form>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <font>If you want to remove paper the try follow link</font><br><br>
+                            <h3><font color="dark-pink">Remove Papers</font></h3>
+                            <br>
+                            <table class="table table-white">
+                                <tr><td>Paper Header</td></tr>
+                                <tr><td><input type='text' class="form-control" name="" required></td></tr>
 
 
-                      <tr><td><input type='submit' class="btn btn-warning" name="" value="Remove"></td></tr>
-                  </table>
+                                <tr><td><input type='submit' class="btn btn-warning" name="" value="Remove"></td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 mb-4">
-                <img src="img/pic2.jpg">
-            </div>
+<!--            <div class="col-md-6 mb-4">-->
+<!--                <img src="img/pic2.jpg">-->
+<!--            </div>-->
           </div>
         </div>
 

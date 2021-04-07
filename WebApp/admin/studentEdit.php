@@ -104,9 +104,11 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title> Student Edit</title>
+  <title>හදව‌තේ ඉංජිනේරූ පංතිය</title>
+  <link href="../img/logo.jpg" rel="icon">
 
   <!-- Custom fonts for this template-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -256,21 +258,17 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-            
-
         </nav>
-        
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
-          
 
           <!-- Content Row -->
           <div class="row">
                        
             <!-- Pending Requests Card Example -->
             <div class="col-md-6 mb-4" style="background-color: white">
+                <br>
                 <h3><font color="blue">Welcome to Student Edit Panel</font></h3>
                 <br>
                 <font>&nbsp;&nbsp;&nbsp;&nbsp;Select one of student name within bellow selection menu and you can update student details as well.<br>&nbsp;In addition , you don't have permission to change some of data fields.</font>

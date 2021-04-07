@@ -1,6 +1,9 @@
 <?php 
         session_start();
         require_once('../php scripts/dbConnection.php');
+        require '../email/mail/PHPMailerAutoload.php';
+        $credential = include('../email/mail/credential.php');   //credentials import
+        $email_body="";
 
         if (isset($_GET['err_code'])) {
             $student_id=$_GET['err_code'];
@@ -85,25 +88,44 @@
         	//echo "ok";
         	$id=$_POST['id'];
         	$is_approved=$_POST['is_approved'];
-          $to = $_POST['email'];
-          $email_subject = "හදවතේ ඉංජිනේරූ පංතිය ";
-          $message = "ඔබව හදවතේ ඉංජිනේරූ පංතිය සදහා සාදරයෙන් පිළිගන්නමු. හදවතේ ඉංජිනේරූ පංතිය මගින් කරගෙන යනු ලබන සෑම පාඩම් මාළාවන්ට ඔබට සහාභාගි විය හැකිය.";
-          $header ="From: hadawate.ingineru.panthiya@gmail.com\r\nContent-Type:text/html;";
+            $to = $_POST['email'];
+
+
 
         	if (empty(trim($id)) || empty(trim($is_approved))) {
         		$err[]="User not found";
         	}
         	else
         	{
-        		  if ($is_approved=="True" || $is_approved=="true" || $is_approved=="TRUE") 
+        	  if ($is_approved=="True" || $is_approved=="true" || $is_approved=="TRUE")
               {
                   $query="UPDATE account SET is_approved=1 WHERE id=$id";
                   $result=mysqli_query($con,$query);
                   if ($result)
                   {
+                      $mail = new PHPMailer;
+                      $mail->isSMTP();
+                      $mail->Host = 'smtp.gmail.com';
+                      $mail->SMTPAuth = true;
+                      $mail->Username = $credential['user']  ;
+                      $mail->Password = $credential['pass']  ;
+                      $mail->SMTPSecure = 'tls';
+                      $mail->Port = 587;
+                      $mail->setFrom("mithilabandara97@gmail.com");
+                      $mail->addAddress($to);
+                      $mail->addReplyTo('Message from Website');
+                      $mail->addAttachment('../loggin/assets/img/logo.jpg');
+                      $mail->isHTML(true);
 
+                      $email_subject = "හදවතේ ඉංජිනේරූ පංතිය ";
+                      $message = "ඔබව හදවතේ ඉංජිනේරූ පංතිය සදහා සාදරයෙන් පිළිගන්නමු. හදවතේ ඉංජිනේරූ පංතිය මගින් කරගෙන යනු ලබන සෑම පාඩම් මාළාවන්ට ඔබට සහාභාගි විය හැකිය.";
+                      $message.="<br><br>Thank you";
+                      $message.="<img src='../img/logo.jpg'>";
+
+                      $mail->Subject = $email_subject;
+                      $mail->Body    = "$message";
+                      $mail->AltBody = 'If you see this mail. please reload the page.';
                       header('Location:admin.php');
-                      mail($to, $email_subject, $message, $header);
                   }
               }
 

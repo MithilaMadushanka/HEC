@@ -249,7 +249,7 @@ $.fn.ajaxSubmit = function(options) {
         return result;
     }
 
-     // XMLHttpRequest Level 2 file uploads (big hat tip to francois2metz)
+     // XMLHttpRequest Level 2 file profileUploads (big hat tip to francois2metz)
     function fileUploadXhr(a) {
         var formdata = new FormData();
 
@@ -302,7 +302,7 @@ $.fn.ajaxSubmit = function(options) {
         return $.ajax(s);
     }
 
-    // private function for handling file uploads (hat tip to YAHOO!)
+    // private function for handling file profileUploads (hat tip to YAHOO!)
     function fileUploadIframe(a) {
         var form = $form[0], el, i, s, g, id, $io, io, xhr, sub, n, timedOut, timeoutHandle;
         var deferred = $.Deferred();

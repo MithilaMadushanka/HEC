@@ -112,7 +112,7 @@
 	<link href="assets/css/demo.css" rel="stylesheet" />
 </head>
 
-<body>
+<body >
 <div class="image-container set-full-height" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('assets/img/theme3.jpg');">
     <!--   Creative Tim Branding   -->
     <a href="http://creative-tim.com">
@@ -136,7 +136,7 @@
 
     <!--   Big container   -->
     <div class="container">
-        <div class="row">
+        <div class="row" id="log">
         <div class="col-sm-8 col-sm-offset-2">
 
             <!--      Wizard container        -->
@@ -188,7 +188,7 @@
                                        ?>
                                       <div class="form-group">
                                         <label>User Name  <small>(required)</small></label>
-                                        <input  type="text" class="form-control" placeholder="Andrew..." name="user_name">
+                                        <input  type="text" class="form-control" placeholder="Andrew..." name="user_name" id="user">
                                       </div>
                                       <div class="form-group">
                                         <label>Password <small>(required)</small></label>
@@ -218,7 +218,7 @@
                                 <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Next' />
                                 <button  class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='submit'>SignIn</button>
                                 <a href="createAccount.php"><input type='button' class='btn btn-finish btn-fill btn-success btn-wd btn-sm' name='home' value='SignUp' /></a><br><br>
-                                <a href="" style="color: red;text-decoration: none;"><input type="checkbox" name="" style="color: red;"> Forget Password?</a><br>
+                                <a href="forget_password.php" style="color: red;text-decoration: none;" ><input type="checkbox" name="" style="color: red;" > Forget Password?</a><br>
                             </div>
 
                             <div class="pull-left">
@@ -229,9 +229,11 @@
                         <br>
                     </form>
                 </div>
+
             </div> <!-- wizard container -->
         </div>
         </div><!-- end row -->
+
     </div> <!--  big container -->
 
     <div class="footer">

@@ -1,5 +1,11 @@
 <?php 
       require_once('../php scripts/dbConnection.php');
+      $msg =0;
+
+      if(isset($_GET['msg']))
+      {
+          $msg=$_GET['msg'];
+      }
 
       if (isset($_POST['upload_note'])) {
           
@@ -15,10 +21,10 @@
             $query="INSERT INTO notes(header,description,tubmail) VALUES('$header','$description','$upload_file')";
             $result=mysqli_query($con,$query);
             if ($result) {
-                echo "uploaded";
+                header("Location:uploadNote?msg=200");
             }
             else
-                echo "Not uploaded";
+                header("Location:uploadNote?msg=400");
       }
  ?>
 <!DOCTYPE html>
@@ -32,7 +38,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Upload Note</title>
+  <title>හදව‌තේ ඉංජිනේරූ පංතිය</title>
+  <link href="../img/logo.jpg" rel="icon">
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -222,35 +229,61 @@
           <div class="row">
                        
             <!-- Pending Requests Card Example -->
-            <div class="col-md-6 mb-4">
-                  <h3><font color="green">Upload Notes</font></h3>
-                  <br>
-                  <form  action="uploadNote.php" method="post" enctype="multipart/form-data">
-                        <table class="table table-white">
-                              <tr><td>Note Header</td></tr> 
-                              <tr><td><input type='text' class="form-control" name="note_header" required></td></tr> 
-                              <tr><td>Note Description</td></tr> 
-                              <tr><td><input type='text' class="form-control" name="note_description" required></td></tr>
-                              <tr><td>Note file</td></tr> 
-                              <tr><td><input type='file' class="form-control" name="file"></td></tr>
-                              <tr><td><input type='submit' class="btn btn-success" name="upload_note" value="Upload" accept="application/pdf" required></td></tr>
-                        </table>
-                  </form>
-                  <br>
-                  <font>If you want to remove note the try follow link</font><br><br>
-                  <h3><font color="dark-pink">Remove Note</font></h3>
-                  <br>
-                  <table class="table table-white">
-                      <tr><td>Note Header</td></tr> 
-                      <tr><td><input type='text' class="form-control" name=""></td></tr> 
+            <div class="col-md-12 mb-4">
+                  <div class="container-fluid">
+                      <div class="card">
+                          <div class="card-body">
+                              <br>
+                              <h3><font color="green">Upload Notes</font></h3>
+                              <br>
+                              <?php
+                              if($msg==200)
+                              {
+                                  echo "<div class='alert alert-success' role='alert'>
+                                            Note file uploaded SuccessFully!.
+                                        </div>";
+                              }
+
+                              if($msg==400)
+                              {
+                                  echo "<div class='alert alert-danger' role='alert'>
+                                            Unable to upload note file.
+                                        </div>";
+                              }
+                              ?>
+                              <form  action="uploadNote.php" method="post" enctype="multipart/form-data">
+                                  <table class="table table-white">
+                                      <tr><td>Note Header</td></tr>
+                                      <tr><td><input type='text' class="form-control" name="note_header" required></td></tr>
+                                      <tr><td>Note Description</td></tr>
+                                      <tr><td><input type='text' class="form-control" name="note_description" required></td></tr>
+                                      <tr><td>Note file</td></tr>
+                                      <tr><td><input type='file' class="form-control" name="file"></td></tr>
+                                      <tr><td><input type='submit' class="btn btn-success" name="upload_note" value="Upload" accept="application/pdf" required></td></tr>
+                                  </table>
+                              </form>
+                              <br>
+                          </div>
+                      </div>
+                      <div class="card mt-3">
+                          <div class="card-body">
+                              <font>If you want to remove note the try follow link</font><br><br>
+                              <h3><font color="dark-pink">Remove Note</font></h3>
+                              <br>
+                              <table class="table table-white">
+                                  <tr><td>Note Header</td></tr>
+                                  <tr><td><input type='text' class="form-control" name=""></td></tr>
 
 
-                      <tr><td><input type='submit' class="btn btn-warning" name="" value="Remove"></td></tr>
-                  </table>
+                                  <tr><td><input type='submit' class="btn btn-warning" name="" value="Remove"></td></tr>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
             </div>
-            <div class="col-md-6 mb-4">
-                <img src="img/pic2.jpg">
-            </div>
+<!--            <div class="col-md-6 mb-4">-->
+<!--                <img src="img/pic2.jpg">-->
+<!--            </div>-->
 
             </div>
           </div>

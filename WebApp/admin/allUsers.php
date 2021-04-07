@@ -99,7 +99,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>All Users</title>
+  <title>හදව‌තේ ඉංජිනේරූ පංතිය</title>
+  <link href="../img/logo.jpg" rel="icon">
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -298,6 +299,7 @@
                 
             </div>
             <div class="col-md-6 mb-4" style="background-color: white">
+                  <br>
                   <font color="green">In bellow you can see user details</font><br><br>
                   <form action="allUsers.php" method="post">
                   <table class="table table-white">

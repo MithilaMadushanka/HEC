@@ -199,50 +199,50 @@
 
     <!-- instragram_area_start -->
     <div class="instragram_area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="single_instagram">
-                    <img src="img/instragram/1.jpg" alt="">
-                    <div class="ovrelay">
-                        <a href="#">
-                            <i class="fa fa-instagram"></i>
-                        </a>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="">
+                        <img src="img/instragram/1.jpg" alt="" width="100%" height="100%">
+                        <div class="">
+                            <a href="#">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single_instagram">
-                    <img src="img/instragram/2.jpg" alt="">
-                    <div class="ovrelay">
-                        <a href="#">
-                            <i class="fa fa-instagram"></i>
-                        </a>
+                <div class="col-lg-3 col-md-6">
+                    <div class="">
+                        <img src="img/instragram/2.jpg" alt="" width="100%" height="100%">
+                        <div class="">
+                            <a href="#">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single_instagram">
-                    <img src="img/instragram/4.jpg" alt="">
-                    <div class="ovrelay">
-                        <a href="#">
-                            <i class="fa fa-instagram"></i>
-                        </a>
+                <div class="col-lg-3 col-md-6">
+                    <div class="">
+                        <img src="img/instragram/4.jpg" alt="" width="100%" height="100%">
+                        <div class="ovrelay">
+                            <a href="#">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single_instagram">
-                    <img src="img/instragram/3.jpg" alt="">
-                    <div class="ovrelay">
-                        <a href="#">
-                            <i class="fa fa-instagram"></i>
-                        </a>
+                <div class="col-lg-3 col-md-6">
+                    <div class="">
+                        <img src="img/instragram/3.jpg" alt="" width="100%" height="100%">
+                        <div class="ovrelay">
+                            <a href="#">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- instragram_area_end -->
 

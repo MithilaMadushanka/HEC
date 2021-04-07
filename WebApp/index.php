@@ -422,7 +422,7 @@
       </div>
       <div class="credits">
       
-        Designed by <a href="#team">Mithila Madushanka</a>
+        Designed by <a href="http://mithilamadushanka.tk/">Mithila Madushanka</a>
       </div>
     </div>
   </footer><!-- #footer -->

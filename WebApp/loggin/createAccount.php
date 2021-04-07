@@ -1,6 +1,8 @@
 <?php 
         require_once('../php scripts/resouresFile.php');
-
+        require '../email/mail/PHPMailerAutoload.php';
+        $credential = include('../email/mail/credential.php');   //credentials import
+        $email_body="";
         $err=array();
         $result="";
         $pwd="";
@@ -16,6 +18,7 @@
         $mobile_no="";
         $user_name="";
         $password="";
+        $sender="mithilabandara97@gmail.com";
 
         if(isset($_POST['submit']))
         {
@@ -47,16 +50,36 @@
                 $result=mysqli_query($con,$query);
 
                 if ($result) {
-                    $to =$email;
+                    $mail = new PHPMailer;
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.gmail.com';
+                    $mail->SMTPAuth = true;
+                    $mail->Username = $credential['user']  ;
+                    $mail->Password = $credential['pass']  ;
+                    $mail->SMTPSecure = 'tls';
+                    $mail->Port = 587;
+
+                    $mail->setFrom("mithilabandara97@gmail.com");
+                    $mail->addAddress($email);
+                    $mail->addReplyTo('Your Request');
+                    $mail->addAttachment('assets/img/logo.jpg');
+                    $mail->isHTML(true);
+
                     $email_subject = "හදවතේ ඉංජිනේරූ පංතිය ";
                     $message = "ඔබගේ ගිණුම අනුමත කර email පණිවිඩයකින් අප ඉදිරියේදී දැනුම් දෙන්නෙමු. එතෙක් ඔබගේ email පිළිබද අවධානයෙන් සිටින්න.";
+                    $message.="<br><br>ස්තූතියි.";
+                    $message.="<img src='../img/logo.jpg'>";
 
-                    $notify[]="Data added Successfully!!";
-                    $notification[]="ඔබගේ ගිණුම අනුමත කර email පණිවිඩයකින් අප ඉදිරියේදී දැනුම් දෙන්නෙමු. එතෙක් ඔබගේ email පිළිබද අවධානයෙන් සිටින්න.";
+                    $mail->Subject = $email_subject;
+                    $mail->Body    = "$message";
+                    $mail->AltBody = 'If you see this mail. please reload the page.';
 
-                    $header ="From: hadawate.ingineru.panthiya@gmail.com\r\nContent-Type:text/html;";
+                    if(!$mail->send()) {
+                        $notify[]="කණගාටුයි නැවත වරක් උත්සහා කරන්න.";
+                    } else {
+                        $notification[]="ඔබගේ ගිණුම අනුමත කර email පණිවිඩයකින් අප ඉදිරියේදී දැනුම් දෙන්නෙමු. එතෙක් ඔබගේ email පිළිබද අවධානයෙන් සිටින්න.";
+                    }
 
-                    mail($to,$email_subject,$message,$header);
                 }
                 else
                     $notify[]="Unable to Add data!!";
@@ -73,7 +96,7 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/logo.jpg">
 	<link rel="icon" type="image/png" href="assets/img/logo.jpg">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>Create New Account</title>
+	<title>හදව‌තේ ඉංජිනේරූ පංතිය</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -124,6 +147,13 @@
                                 echo "<div class='alert alert-success'>";
                                 echo "<center>".$notification[0]."</center>";
                                 echo "</div>";
+                              }
+
+                              if(!empty($notify))
+                              {
+                                  echo "<div class='alert alert-danger'>";
+                                  echo "<center>".$notify[0]."</center>";
+                                  echo "</div>";
                               }
                           ?>
                         	<h3>
@@ -207,10 +237,7 @@
                                                         echo "<font color=red >You must have to fill each blanks!</font>";
                                                     }
 
-                                                    if(!empty($notify))
-                                                    {
-                                                        echo "<font color=green >".$notify[0]."</font>";
-                                                    }
+
                                                ?>
                                       </div>
                                   </div>
@@ -267,7 +294,7 @@
                                       <div class="form-group">
                                           <label>Your mobile number</label>
                                           <div class="input-group">
-                                              <input type="text" class="form-control" placeholder="Type your moblie number" name="mobile_no">
+                                              <input type="text" class="form-control" placeholder="Type your moblie number" name="mobile_no" min="10">
                                               
                                           </div>
                                       </div>
@@ -276,7 +303,7 @@
                                       <div class="form-group">
                                           <label>User name</label>
                                           <div class="input-group">
-                                              <input type="text" class="form-control" placeholder="Type your user name" name="user_name"><br><br>
+                                              <input type="text" class="form-control" placeholder="Type your user name" name="user_name" minlength="6" maxlength="15"><br><br>
                                               
                                           </div>
                                        </div>
@@ -285,7 +312,7 @@
                                        <div class="form-group">
                                           <label>Password</label>
                                           <div class="input-group">
-                                              <input type="password" class="form-control" placeholder="****" name="password">
+                                              <input type="password" class="form-control" placeholder="****" name="password" max="6" max="15">
 
                                           </div>
                                        </div>

@@ -1,7 +1,12 @@
 <?php
       session_start();
       require_once('../php scripts/dbConnection.php');
+      $msg =0;
 
+      if(isset($_GET['msg']))
+      {
+          $msg=$_GET['msg'];
+      }
 
       if (isset($_POST['upload_video'])) {
           
@@ -29,10 +34,10 @@
                             $query="INSERT INTO images(header,description,tubmail,link,image) VALUES('$header','$description','$file_name','$link','$image')";
                             $result=mysqli_query($con,$query);
                             if ($result) {
-                                  
+                                header("Location:uploadVideo?msg=200");
                             }
                             else
-                                  echo "Not upload";
+                                header("Location:uploadVideo?msg=400");
                       }
                       else
                           echo "not moved";
@@ -56,7 +61,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Upload Video</title>
+  <title>හදව‌තේ ඉංජිනේරූ පංතිය</title>
+  <link href="../img/logo.jpg" rel="icon">
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -236,45 +242,69 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          
-
           <!-- Content Row -->
           <div class="row">
                        
             <!-- Pending Requests Card Example -->
-            <div class="col-md-6 mb-4">
-                <h3><font color="green">Upload Video</font></h3>
-                <br>
-                <form  action="uploadVideo.php" method="post" enctype="multipart/form-data">
-                <table class="table table-white">
-                    <tr><td>Video Header</td></tr> 
-                    <tr><td><input type='text' class="form-control" name="video_header"></td></tr> 
-                    <tr><td>Video Description</td></tr> 
-                    <tr><td><input type='text' class="form-control" name="video_description"></td></tr>
-                    <tr><td>Video Tubmail</td></tr> 
-                    <tr><td><input type='file' class="form-control" name="file"></td></tr>
-                    <tr><td>Video Link</td></tr> 
-                    <tr><td><input type='text' class="form-control" name="video_link"></td></tr>
+            <div class="col-md-12 mb-4">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                            <br>
+                            <h3><font color="green">Upload Video</font></h3>
+                            <br>
+                            <?php
+                            if($msg==200)
+                            {
+                                echo "<div class='alert alert-success' role='alert'>
+                                            Video file uploaded SuccessFully!.
+                                        </div>";
+                            }
 
-                    <tr><td><input type='submit' class="btn btn-success" name="upload_video" value="Upload"></td></tr>
-                </table>
-                </form>
-                <br>
-                <font>If you want to remove video the try follow link</font><br><br>
-                <h3><font color="dark-pink">Remove Video</font></h3>
-                <br>
-                <table class="table table-white">
-                    <tr><td>Video Header</td></tr> 
-                    <tr><td><input type='text' class="form-control" name=""></td></tr> 
+                            if($msg==400)
+                            {
+                                echo "<div class='alert alert-danger' role='alert'>
+                                            Unable to upload video file.
+                                        </div>";
+                            }
+                            ?>
+                            <form  action="uploadVideo.php" method="post" enctype="multipart/form-data">
+                                <table class="table table-white">
+                                    <tr><td>Video Header</td></tr>
+                                    <tr><td><input type='text' class="form-control" name="video_header" required></td></tr>
+                                    <tr><td>Video Description</td></tr>
+                                    <tr><td><input type='text' class="form-control" name="video_description" required></td></tr>
+                                    <tr><td>Video Tubmail</td></tr>
+                                    <tr><td><input type='file' class="form-control" name="file" required></td></tr>
+                                    <tr><td>Video Link</td></tr>
+                                    <tr><td><input type='text' class="form-control" name="video_link" required></td></tr>
+
+                                    <tr><td><input type='submit' class="btn btn-success" name="upload_video" value="Upload"></td></tr>
+                                </table>
+                            </form>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <font>If you want to remove video the try follow link</font><br><br>
+                            <h3><font color="dark-pink">Remove Video</font></h3>
+                            <br>
+                            <table class="table table-white">
+                                <tr><td>Video Header</td></tr>
+                                <tr><td><input type='text' class="form-control" name="" required></td></tr>
 
 
-                    <tr><td><input type='submit' class="btn btn-warning" name="" value="Remove"></td></tr>
-                </table>
+                                <tr><td><input type='submit' class="btn btn-warning" name="" value="Remove"></td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-md-6 mb-4">
-                <img src="img/pic2.jpg">
-            </div>
+<!--            <div class="col-md-6 mb-4">-->
+<!--                <img src="img/pic2.jpg">-->
+<!--            </div>-->
           </div>
 
           
