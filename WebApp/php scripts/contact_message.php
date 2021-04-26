@@ -19,7 +19,7 @@
             $mail->Port = 587;
 
             $mail->setFrom($email);
-            $mail->addAddress("mithilabandara97@gmail.com");
+            $mail->addAddress("hadawate.ingineru.panthiya@gmail.com");
             $mail->addReplyTo('Message from Website');
             //$mail->addCC('cc@example.com');
             //$mail->addBCC('bcc@example.com');

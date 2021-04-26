@@ -111,21 +111,29 @@
                       $mail->Password = $credential['pass']  ;
                       $mail->SMTPSecure = 'tls';
                       $mail->Port = 587;
-                      $mail->setFrom("mithilabandara97@gmail.com");
+                      $mail->setFrom("hadawate.ingineru.panthiya@gmail.com");
                       $mail->addAddress($to);
                       $mail->addReplyTo('Message from Website');
                       $mail->addAttachment('../loggin/assets/img/logo.jpg');
                       $mail->isHTML(true);
 
-                      $email_subject = "හදවතේ ඉංජිනේරූ පංතිය ";
-                      $message = "ඔබව හදවතේ ඉංජිනේරූ පංතිය සදහා සාදරයෙන් පිළිගන්නමු. හදවතේ ඉංජිනේරූ පංතිය මගින් කරගෙන යනු ලබන සෑම පාඩම් මාළාවන්ට ඔබට සහාභාගි විය හැකිය.";
-                      $message.="<br><br>Thank you";
+                      $email_subject = "Account Approvel ";
+                      $message="Dear Student,<br>";
+                      $message.= "ඔබව හදවතේ ඉංජිනේරූ පංතිය සදහා සාදරයෙන් පිළිගන්නමු. හදවතේ ඉංජිනේරූ පංතිය මගින් කරගෙන යනු ලබන සෑම පාඩම් මාළාවන්ට ඔබට සහාභාගි විය හැකිය.<br>";
+                      $message.="www.slteca.lk<br>";
+                      $message.="<br><br>Thank you<br>";
+                      $message.="හදවතේ ඉංජීනේරූ පංතිය.<br>";
                       $message.="<img src='../img/logo.jpg'>";
 
                       $mail->Subject = $email_subject;
                       $mail->Body    = "$message";
                       $mail->AltBody = 'If you see this mail. please reload the page.';
-                      header('Location:admin.php');
+                      if(!$mail->send()) {
+                          header('Location:admin.php?msg=405');
+                      } else {
+                          header('Location:admin.php?msg=505');
+                      }
+
                   }
               }
 
@@ -159,7 +167,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Approvel</title>
+  <title>හදව‌තේ ඉංජිනේරූ පංතිය</title>
+  <link href="../img/logo.jpg" rel="icon">
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

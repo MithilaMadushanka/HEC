@@ -39,18 +39,20 @@
               $mail->SMTPSecure = 'tls';
               $mail->Port = 587;
 
-              $mail->setFrom("mithilabandara97@gmail.com");
+              $mail->setFrom("hadawate.ingineru.panthiya@gmail.com");
               $mail->addAddress($email);
               echo $email;
               $mail->addReplyTo('Reset your account password');
               $mail->addAttachment('assets/img/logo.jpg');
               $mail->isHTML(true);                                  // Set email format to HTML
 
-              $email_body = "Hello {$full_name} Your account password has been reset!. And your new login details as follow, <br>";
+              $email_body.="Dear {$full_name},<br><br>";
+              $email_body.= "Your account password has been reset!. And your new login details as follow, <br>";
               $email_body.="<b>From:</b> හදවතේ ඉංජිනේරූ පංතිය  <br>";
               $email_body.="<b>Username :</b>{$user_name} <br>";
               $email_body.="<b>New Password :</b><br>".nl2br(strip_tags($default_pass));
-              $email_body.="<br><br>Thank you";
+              $email_body.="<br><br>Thank you<br>";
+              $email_body.="හදවතේ ඉංජිනේරූ පංතිය<br>";
               $email_body.="<img src='assets/img/logo.jpg'>";
 
               $mail->Subject = "Reset your account password";

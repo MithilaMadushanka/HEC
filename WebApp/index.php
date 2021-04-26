@@ -275,8 +275,8 @@
     <section id="team">
       <div class="container">
         <div class="section-header wow fadeInUp">
-          <h3>Teachers</h3>
-          <p>In below you can see solution devolop teachers.</p>
+          <h3>Teacher</h3>
+<!--          <p>In below you can see solution devolop teachers.</p>-->
         </div>
 
         <div class="row">
@@ -400,13 +400,13 @@
                 <strong>Email:</strong> Navodpiumanga24@gmail.com<br>
             </p>
 
-            <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            </div>
+<!--            <div class="social-links">-->
+<!--              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>-->
+<!--              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>-->
+<!--              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>-->
+<!--              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>-->
+<!--              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>-->
+<!--            </div>-->
 
           </div>
 

@@ -28,8 +28,8 @@
             $district=$_POST['district'];
             $home_city=$_POST['home_city'];
 
-            if(isset($_POST['account_type']))
-              $account_type=$_POST['account_type'];
+
+            $account_type="Student";
 
             $email=$_POST['email'];
             $mobile_no=$_POST['mobile_no'];
@@ -59,15 +59,17 @@
                     $mail->SMTPSecure = 'tls';
                     $mail->Port = 587;
 
-                    $mail->setFrom("mithilabandara97@gmail.com");
+                    $mail->setFrom("hadawate.ingineru.panthiya@gmail.com");
                     $mail->addAddress($email);
                     $mail->addReplyTo('Your Request');
                     $mail->addAttachment('assets/img/logo.jpg');
                     $mail->isHTML(true);
 
-                    $email_subject = "හදවතේ ඉංජිනේරූ පංතිය ";
-                    $message = "ඔබගේ ගිණුම අනුමත කර email පණිවිඩයකින් අප ඉදිරියේදී දැනුම් දෙන්නෙමු. එතෙක් ඔබගේ email පිළිබද අවධානයෙන් සිටින්න.";
-                    $message.="<br><br>ස්තූතියි.";
+                    $email_subject = "Regarding your E Learning Account";
+                    $message ="Dear ".$full_name.","."<br><br>";
+                    $message.= "ඔබගේ ගිණුම අනුමත කර email පණිවිඩයකින් අප ඉදිරියේදී දැනුම් දෙන්නෙමු. එතෙක් ඔබගේ email පිළිබද අවධානයෙන් සිටින්න.";
+                    $message.="<br><br>ස්තූතියි.<br>";
+                    $message.="හදවතේ ඉංජීනේරූ පංතිය.<br>";
                     $message.="<img src='../img/logo.jpg'>";
 
                     $mail->Subject = $email_subject;
@@ -158,18 +160,23 @@
                           ?>
                         	<h3>
                         	   <b>Create</b> New Account <br>
-                        	   <small>This information will let us know more about yourself.</small>
+                        	   <small>ඔබ ලබා දෙන තොරතුරු මගින් ඔබට වඩාත් හොද සේවාවක් ලබා ගත හැක.</small>
                         	</h3>
-
+                            <?php
+                            if(!empty($err))
+                            {
+                                echo "<div class='alert alert-danger text-center'>කණගාටුයි.මෙම සේවාව ලබා ගැනීමට සදහන් කර ඇති කොරකුරු ලබා දිය යුතුය.</div>";
+                            }
+                            ?>
                     	</div>
-                      <br>
-						          <div class="wizard-navigation">
-							           <ul>
+                        <br>
+						<div class="wizard-navigation">
+						   <ul>
 	                            <li><a href="#location" data-toggle="tab">Basic Info</a></li>
-	                            <li><a href="#type" data-toggle="tab">Account Type</a></li>
+<!--	                            <li><a href="#type" data-toggle="tab">Account Type</a></li>-->
 	                            <li><a href="#facilities" data-toggle="tab">Advance Info</a></li>
 	                       </ul>
-						          </div>
+						</div>
 
                         <div class="tab-content">
                             <div class="tab-pane" id="location">
@@ -231,14 +238,6 @@
                                             <option value="Vavuniya">- Vavuniya -</option>
                                           </select>
                                           <br>
-                                          <?php 
-                                                    if(!empty($err))
-                                                    {
-                                                        echo "<font color=red >You must have to fill each blanks!</font>";
-                                                    }
-
-
-                                               ?>
                                       </div>
                                   </div>
                                   <div class="col-sm-5">
@@ -252,32 +251,32 @@
                                   </div>
                               </div>
                             </div>
-                            <div class="tab-pane" id="type">
-                                <h4 class="info-text">What type of Account  do you want? </h4>
-                                <div class="row">
-                                    <div class="col-sm-10 col-sm-offset-1">
-                                        <div class="col-sm-4 col-sm-offset-2">
-                                            <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Select this option if you are Student.">
-                                                <input type="radio" name="account_type" value="student">Student
-                                                <div class="icon">
-                                                    <i class="fa fa-home"></i>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="You don't have permission to become Admin">
-                                                <input type="radio" name="account_type" value="admin">Admin
-                                                <div class="icon">
-                                                    <i class="fa fa-building"></i>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
+<!--                            <div class="tab-pane" id="type">-->
+<!--                                <h4 class="info-text">What type of Account  do you want? </h4>-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-sm-10 col-sm-offset-1">-->
+<!--                                        <div class="col-sm-6 col-sm-offset-2">-->
+<!--                                            <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Select this option if you are Student.">-->
+<!--                                                <input type="radio" name="account_type" value="student" checked>Student-->
+<!--                                                <div class="icon">-->
+<!--                                                    <i class="fa fa-home"></i>-->
+<!--                                                </div>-->
+<!--                                                -->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-sm-4">-->
+<!--                                            <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="You don't have permission to become Admin">-->
+<!--                                                <input type="radio" name="account_type" value="admin" disabled>Admin-->
+<!--                                                <div class="icon">-->
+<!--                                                    <i class="fa fa-building"></i>-->
+<!--                                                </div>-->
+<!--                                                -->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!---->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="tab-pane" id="facilities">
                                 <h4 class="info-text">Now We need Your Advance Details. </h4>
                                 <div class="row">
@@ -285,38 +284,34 @@
                                       <div class="form-group">
                                           <label>Email address</label>
                                           <div class="input-group">
-                                              <input type="text" class="form-control" placeholder="Type your email address" name="email">
+                                              <input type="text" class="form-control" placeholder="Type your email address" name="email" required>
                                               
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label>Your mobile number</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Type your moblie number" name="mobile_no" min="10" required>
+
                                           </div>
                                       </div>
                                     </div>
-                                    <div class="col-sm-5">
-                                      <div class="form-group">
-                                          <label>Your mobile number</label>
-                                          <div class="input-group">
-                                              <input type="text" class="form-control" placeholder="Type your moblie number" name="mobile_no" min="10">
-                                              
-                                          </div>
-                                      </div>
-                                     </div>
-                                     <div class="col-sm-5 col-sm-offset-1">
+                                    <div class="col-sm-5 col-sm-offset-1">
                                       <div class="form-group">
                                           <label>User name</label>
                                           <div class="input-group">
-                                              <input type="text" class="form-control" placeholder="Type your user name" name="user_name" minlength="6" maxlength="15"><br><br>
-                                              
-                                          </div>
-                                       </div>
-                                      </div>
-                                      <div class="col-sm-5">
-                                       <div class="form-group">
-                                          <label>Password</label>
-                                          <div class="input-group">
-                                              <input type="password" class="form-control" placeholder="****" name="password" max="6" max="15">
+                                              <input type="text" class="form-control" placeholder="Type your user name" name="user_name" minlength="6" maxlength="15" required><br><br>
 
                                           </div>
-                                       </div>
                                       </div>
+                                      <div class="form-group">
+                                            <label>Password</label>
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" placeholder="****" name="password" max="6" max="15" required>
+
+                                            </div>
+                                      </div>
+                                    </div>
                                 </div>
                             </div>
                            

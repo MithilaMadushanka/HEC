@@ -186,6 +186,12 @@
                                                   echo "</div>";
                                             }      
                                        ?>
+                                      <?php
+                                      if(!empty($err))
+                                          echo "<div class='alert alert-danger'>".$err[0]."</div>";
+
+
+                                      ?>
                                       <div class="form-group">
                                         <label>User Name  <small>(required)</small></label>
                                         <input  type="text" class="form-control" placeholder="Andrew..." name="user_name" id="user">
@@ -201,12 +207,7 @@
                                                 <option value="Admin">Admin</option>
                                           </select>
                                       </div>
-                                      <?php
-                                              if(!empty($err))
-                                                  echo "<font color=red>".$err[0]."</font>"; 
 
-                                                 
-                                       ?>
                                   </div>
                                   
                               </div>

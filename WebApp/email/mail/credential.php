@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'user' => 'mithilabandara97@gmail.com',
-    'pass' => '971911379v'
+    'user' => 'hadawate.ingineru.panthiya@gmail.com',
+    'pass' => 'Navod@97'
 ];
 
 ?>
