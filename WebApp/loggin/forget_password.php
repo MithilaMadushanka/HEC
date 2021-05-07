@@ -94,7 +94,7 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/logo.jpg">
 	<link rel="icon" type="image/png" href="assets/img/logo.jpg">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>හදව‌තේ ඉංජිනේරූ පංතිය</title>
+	<title>Heart Engineering Class</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -146,6 +146,7 @@
 
                     	<div class="wizard-header">
                             <a href="../index.php"><img src="assets/img/home.png" style="margin-left: 20px;margin-top: 10px;" alt="Back to Home" title="Back to Home"></a>
+                            <div id="google_translate_element" style="float: right"></div>
                         <h3>
                               Reset password In Here <br>
 <!--                             <small>This information will let us know more about you.</small>-->
@@ -256,5 +257,10 @@
 
 	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 	<script src="assets/js/jquery.validate.min.js"></script>
-
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </html>

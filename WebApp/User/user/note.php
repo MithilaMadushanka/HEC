@@ -18,7 +18,7 @@
                 $show.="<div class='col-md-6 col-lg-6'>";
                     $show.="<div class='single_delicious d-flex align-items-center'>";
                         $show.="<div class='thumb'>";
-                            $show.="<img src='../../admin/uploadNotes/pdf.png' width=150px height=150px >";
+                            $show.="<img src='img/pdf.png' width=150px height=150px >";
                         $show.="</div>";
                         $show.="<div class='info'>";
                             $show.="<h3>".$list['header']."</h3>";
@@ -36,7 +36,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>හදවතේ ඉංජිනේරූ පංතිය </title>
+    <title>Heart Engineering Class </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -87,6 +87,7 @@
                                         </li>
                                         
                                         <li><a href="../../php scripts/logout.php"><font color="white">LogOut</font></a></li>
+                                        <li><div id="google_translate_element"></div></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -150,7 +151,7 @@
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-80">
                         <span>Note Lessons</span>
-                        <h2>දිවයිනේ ඇති හොදම පාඩම් සටහන් අන්තර්ගතය</h2>
+                        <h2>Contains the finest tutorials available on the Internet</h2>
                     </div>
                 </div>
             </div>
@@ -181,7 +182,7 @@
                                 <h3>Best Teacher <br>
                                         in your City</h3>
                             </div>
-                            <p>මම නවෝද් පියුමංග එදිරිසිංහ මේ වන විට රුහුණ විශ්ව විද්‍යාලයේ තෙවන වසර උපාධිය හදරන අතර මා දැන් ඉංජිනේරූ තාක්ෂණවේදී විෂය සම්බන්ධ උපාධිය හදාරන බැවින් මේ විෂය සම්බන්ධව කටයුතු කරනු ලබයී. ඉදිරියට මෙම වෙබ් අඩවිය හරහා විෂය කරුණු මෙන්ම, Questions Papers ද සාකච්චා කිරීමද මාගේ අරමුණ වේ.</p>
+                            <p>Navod Piyumanga Edirisinghe I am currently studying for my third year degree at the University of Ruhuna and am currently pursuing a degree in Engineering Technology. It is my intention to discuss the subject matter as well as the Question Papers through this website.</p>
                             <div class="img_thumb">
                                 <img src="img/signature.png" alt="">
                             </div>
@@ -319,7 +320,7 @@
                         <div class="col-xl-12">
                             <p class="copy_right text-center">
                                 
-                                Copyright &copy; All rights reserved | හදවතේ ඉංජිනේරූ පංතිය 
+                                Copyright &copy; All rights reserved | Heart Engineering Class
 
                             </p>
                         </div>
@@ -356,7 +357,12 @@
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
-
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

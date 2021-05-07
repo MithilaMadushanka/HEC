@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>හදව‌තේ ඉංජිනේරූ පංතිය
+  <title>heart Engineering Class
   </title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
@@ -46,7 +46,7 @@
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">හදව‌තේ ඉංජිනේරූ පංතිය</a></h1>
+        <h1><a href="#intro" class="scrollto">Heart Engineering Class</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
@@ -58,8 +58,8 @@
           <li><a href="#services">Services</a></li>
           <li><a href="loggin/log.php">SignIn</a></li>
           <li><a href="#team">Teachers</a></li>
-         
           <li><a href="#contact">Contact</a></li>
+          <li><div id="google_translate_element"></div></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -81,8 +81,8 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>We are professional</h2>
-                <p>පවතින නවීන තාක්ෂණය යෝදා ගනිමින් සාර්ථක සහා යෝග්‍ය තොරතුරූ ඉංජිනේරූ තාක්ෂණවේදය හදාරන ඔබ හට ලබා දීම අපගේ මූලීක අරමුණ වේ
-          .එමෙන්ම උසස් පෙළ විභාගයෙන් ඉහළ සාමාර්ථ ලබා විශ්ව විද්‍යාල වරම් ලබා දීමද අපගේ අරමුණ වේ.</p>
+                <p>Our primary objective is to provide you with successful and relevant information studying engineering technology using the latest technology available.
+                    .Also, our aim is to give university opportunities by obtaining high marks in the GCE Advanced Level Examination.</p>
                 <a href="#services" class="btn-get-started scrollto">Get Started</a>
               </div>
             </div>
@@ -93,8 +93,8 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Our Services</h2>
-                <p>උසස් පෙළ ඉංජීනේරූ තාක්ෂණවේදය විෂයට අදාළ සියලුම පඩම් මළාවන් ඔබට ඉතාමත් පහසුවෙන් ලබා ගත හැක.එමෙන්ම එම පාඩම් මළාවන් සහිත 
-                  video ගොනු මෙන්ම Note සහා Question papers ලබා ගත හැක.</p>
+                <p>You can easily get all the courses related to the Advanced Level Engineering Technology subject.
+                    Video files as well as Note and Question papers are available.</p>
                 <a href="#services" class="btn-get-started scrollto">Get Started</a>
               </div>
             </div>
@@ -105,8 +105,8 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>We are professional</h2>
-                <p>පවතින නවීන තාක්ෂණය යෝදා ගනිමින් සාර්ථක සහා යෝග්‍ය තොරතුරූ ඉංජිනේරූ තාක්ෂණවේදය හදාරන ඔබ හට ලබා දීම අපගේ මූලීක අරමුණ වේ
-                .එමෙන්ම උසස් පෙළ විභාගයෙන් ඉහළ සාමාර්ථ ලබා විශ්ව විද්‍යාල වරම් ලබා දීමද අපගේ අරමුණ වේ.</p>
+                <p>Our primary objective is to provide you with successful and relevant information studying engineering technology using the latest technology available.
+                    .Also, our aim is to give university opportunities by obtaining high marks in the GCE Advanced Level Examination.</p>
                 <a href="#services" class="btn-get-started scrollto">Get Started</a>
               </div>
             </div>
@@ -117,8 +117,8 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Our Services</h2>
-                <p>උසස් පෙළ ඉංජීනේරූ තාක්ෂණවේදය විෂයට අදාළ සියලුම පඩම් මළාවන් ඔබට ඉතාමත් පහසුවෙන් ලබා ගත හැක.එමෙන්ම එම පාඩම් මළාවන් සහිත 
-                  video ගොනු මෙන්ම Note සහා Question papers ලබා ගත හැක.</p>
+                <p>You can easily get all the courses related to the Advanced Level Engineering Technology subject.
+                    Video files as well as Note and Question papers are available.</p>
                 <a href="#services" class="btn-get-started scrollto">Get Started</a>
               </div>
             </div>
@@ -147,8 +147,8 @@
 
         <header class="section-header">
           <h3>About Us</h3>
-          <p>පවතින නවීන තාක්ෂණය යෝදා ගනිමින් සාර්ථක සහා යෝග්‍ය තොරතුරූ ඉංජිනේරූ තාක්ෂණවේදය හදාරන ඔබ හට ලබා දීම අපගේ මූලීක අරමුණ වේ
-          .එමෙන්ම උසස් පෙළ විභාගයෙන් ඉහළ සාමාර්ථ ලබා විශ්ව විද්‍යාල වරම් ලබා දීමද අපගේ අරමුණ වේ.</p>
+          <p>Our primary objective is to provide you with successful and relevant information studying engineering technology using the latest technology available.
+              .Also, our aim is to give university opportunities by obtaining high marks in the GCE Advanced Level Examination.</p>
         </header>
 
         <div class="row about-cols">
@@ -161,7 +161,7 @@
               </div>
               <h2 class="title"><a href="#">Our Mission</a></h2>
               <p>
-                ඉංජිනේරූ තාක්ෂණවේදයෙන් හා සාරධර්ම වලින් යුක්ත තාක්ෂණවේදින් පිරිසක් දැයට දායද කිරීම සහා දැයේ අධ්‍යාපන මට්ටම ඉහළ නංවාලිමක් දේශියකත්වය රැගත් නව නිර්මාණ රට තුල බිහි කිරීමත්ය.
+                  To contribute a group of technologists with engineering technology and values to the country and to create innovative innovations in the country to uplift the level of education in the country.
               </p>
             </div>
           </div>
@@ -174,7 +174,7 @@
               </div>
               <h2 class="title"><a href="#">Our Plan</a></h2>
               <p>
-                  අන්තර්ජාලය හරහා Practical Lesson සංවිධානය කිරීමත් Viva(Short Quzes) සංවිධානය සහා පැවත්වීම අපගේ අරමුණ වේ.
+                  Our goal is to organize and conduct Practical Lessons online and with Viva (Short Quzes)
               </p>
             </div>
           </div>
@@ -187,7 +187,7 @@
               </div>
               <h2 class="title"><a href="#">Our Vision</a></h2>
               <p>
-                හදවතින් සුන්දර වූත් විශ්ව තාක්ෂණ දැනුමෙන් යුත් විද්‍යාර්ථයන් පිරිසක් දැයට දායද කිරීම.
+                  Donating a group of scholars with universal heart knowledge and universal technological knowledge to the nation.
               </p>
             </div>
           </div>
@@ -205,8 +205,8 @@
 
         <header class="section-header wow fadeInUp">
           <h3>Services</h3>
-          <p>උසස් පෙළ ඉංජීනේරූ තාක්ෂණවේදය විෂයට අදාළ සියලුම පඩම් මළාවන් ඔබට ඉතාමත් පහසුවෙන් ලබා ගත හැක. එමෙන්ම එම පාඩම් මළාවන් සහිත 
-             video ගොනු මෙන්ම Note සහා Question papers ලබා ගත හැක.</p>
+          <p>You can easily get all the courses related to the Advanced Level Engineering Technology subject. And those lessons are dead
+              Video files as well as Note and Question papers are available.</p>
         </header>
 
         <div class="row">
@@ -214,27 +214,27 @@
           <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
             <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
             <h4 class="title"><a href="loggin/log.php">Introduction</a></h4>
-            <p class="description">තාක්ෂණවේදය විෂයධරාව හැදින්වීම .</p>
+            <p class="description">Introduction to Technology Curriculum.</p>
           </div>
           <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
             <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
             <h4 class="title"><a href="loggin/log.php">Lessons</a></h4>
-            <p class="description">උසස් පෙළ ඉංජීනේරූ තාක්ෂණවේදය විෂයට අදාළ සියලුම පාඩම් මෙන්ම අනේකුත් විෂයන් වලට අදාළ පාඩම් මළාවන්ද අන්තර්ගතවේ .</p>
+            <p class="description">Includes all Advanced Level Engineering Technology subjects as well as other related subjects.</p>
           </div>
           <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
             <div class="icon"><i class="ion-ios-paper-outline"></i></div>
             <h4 class="title"><a href="loggin/log.php">Notes</a></h4>
-            <p class="description">උසස් පෙළ ඉංජීනේරූ තාක්ෂණවේදය විෂයට අදාළ සියලුම විෂය කරුණු  අන්තර්ගතවේ.</p>
+            <p class="description">Includes all subject matters relevant to the Advanced Level Engineering Technology subject.</p>
           </div>
           <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
             <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
             <h4 class="title"><a href="loggin/log.php">Papers</a></h4>
-            <p class="description">උසස් පෙළ ඉංජීනේරූ තාක්ෂණවේදය විෂයට අදාළ PAPERS අන්තර්ගතවේ..</p>
+            <p class="description">Contains PAPERS related to Advanced Level Engineering Technology subject.</p>
           </div>
           <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
             <div class="icon"><i class="ion-ios-barcode-outline"></i></div>
             <h4 class="title"><a href="loggin/log.php">Video Lesson</a></h4>
-            <p class="description">උසස් පෙළ ඉංජීනේරූ තාක්ෂණවේදය විෂයට අදාළ Video පාඩම් මළාවන් අන්තර්ගතවේ.</p>
+            <p class="description">Includes video tutorials on Advanced Level Engineering Technology.</p>
           </div>
          
 
@@ -249,7 +249,7 @@
     <section id="call-to-action" class="wow fadeIn">
       <div class="container text-center">
         <h3>Call To Action</h3>
-        <p> ඔබගේ  ගැටලු අප වෙත යොමු කරන්න සහා අප සූදානම් එම ගැටලු වළට පිළිතුරු ලබා දෙන්න..</p>
+        <p> Send us your questions and we will answer those questions.</p>
         <a class="cta-btn" href="#contact">Call To Action</a>
       </div>
     </section><!-- #call-to-action -->
@@ -283,7 +283,7 @@
           
           <div class="col-lg-12 col-md-6 wow fadeInUp">
             <div class="member">
-              <img src="img/headteacher.jpg" class="img-fluid" alt="">
+              <img src="img/teacher2.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Piumanga Edirisinghe </h4>
@@ -313,7 +313,7 @@
 
         <div class="section-header">
           <h3>Contact Us</h3>
-          <p>ඔබගේ වටිනා අදහස් සහා ගැටලු අප වෙත යොමු කරන්න සහා අප සූදානම් එම ගැටලු වළට පිළිතුරු ලබා දෙන්න.</p>
+          <p>Send us your valuable ideas and questions and we will answer those questions ready.</p>
         </div>
 
         <div class="row contact-info">
@@ -376,8 +376,8 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h4>හදව‌තේ ඉංජිනේරූ පංතිය</h4>
-            <p>In this website provide so many banifits for you. And using above links you can get lessons and question papers.</p>
+            <h4>Heart Engineering Class</h4>
+            <p>In this website provide so many benefits for you. And using above links you can get lessons and question papers.</p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
@@ -418,7 +418,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>හදව‌තේ ඉංජිනේරූ පංතිය</strong>. All Rights Reserved
+        &copy; Copyright <strong>Heart Engineering Class</strong>. All Rights Reserved
       </div>
       <div class="credits">
       
@@ -450,6 +450,12 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

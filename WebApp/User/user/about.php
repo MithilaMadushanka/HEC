@@ -142,7 +142,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>හදවතේ ඉංජීනේරූ පංතිය </title>
+    <title>Heart Engineering Class </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -192,6 +192,7 @@
                                     </li>
 
                                     <li><a href="../../php scripts/logout.php"><font color="white">LogOut</font></a></li>
+                                    <li><div id="google_translate_element"></div></li>
                                 </ul>
                             </nav>
                         </div>
@@ -232,7 +233,7 @@
                         <?php echo $_SESSION['contact']; ?><br>
                         <br>
                         <br>
-                        <font color="green">ඔබගේ ගිණුමෙහි පැතිකඩරුව හෝ මුරපදය වෙනස් කිරීමට අවශ්‍ය නම්</font>
+                        <font color="green">If you need to change the profile or password of your account</font>
                         <br>
                         <br>
                         <?php
@@ -453,7 +454,7 @@
                 <div class="col-xl-12">
                     <p class="copy_right text-center">
 
-                        Copyright &copy;All rights reserved | හදවතේ ඉංජිනේරූ පංතිය
+                        Copyright &copy;All rights reserved | Heart Engineering Class
 
                     </p>
                 </div>
@@ -489,7 +490,12 @@
 <script src="js/mail-script.js"></script>
 
 <script src="js/main.js"></script>
-
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

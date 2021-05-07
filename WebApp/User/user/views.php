@@ -10,7 +10,7 @@
 
 			if ($result) {
 				$list=mysqli_fetch_assoc($result);
-				$file="../../admin/uploadNotes/".$list['tubmail'];
+				$file="../../admin_new/uploads/notes/".$list['tubmail'];
 				header("Content-type:application/pdf");
 				header('Content-Disposition:attachment;filename=downloaded.pdf');
 				readfile($file);

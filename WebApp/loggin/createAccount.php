@@ -77,9 +77,9 @@
                     $mail->AltBody = 'If you see this mail. please reload the page.';
 
                     if(!$mail->send()) {
-                        $notify[]="කණගාටුයි නැවත වරක් උත්සහා කරන්න.";
+                        $notify[]="Sorry, try again.";
                     } else {
-                        $notification[]="ඔබගේ ගිණුම අනුමත කර email පණිවිඩයකින් අප ඉදිරියේදී දැනුම් දෙන්නෙමු. එතෙක් ඔබගේ email පිළිබද අවධානයෙන් සිටින්න.";
+                        $notification[]="We will notify you in the future with an email confirming your account. Until then, keep an eye on your email.";
                     }
 
                 }
@@ -98,7 +98,7 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/logo.jpg">
 	<link rel="icon" type="image/png" href="assets/img/logo.jpg">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>හදව‌තේ ඉංජිනේරූ පංතිය</title>
+	<title>Heart Engineering Class</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -143,6 +143,7 @@
 
                     	<div class="wizard-header">
                             <a href="../index.php"><img src="assets/img/home.png" style="margin-left: 20px;margin-top: 10px;" alt="Back to Home" title="Back to Home"></a>
+                            <div id="google_translate_element" style="float: right"></div>
                           <?php 
                               if(!empty($notification))
                               {
@@ -160,12 +161,12 @@
                           ?>
                         	<h3>
                         	   <b>Create</b> New Account <br>
-                        	   <small>ඔබ ලබා දෙන තොරතුරු මගින් ඔබට වඩාත් හොද සේවාවක් ලබා ගත හැක.</small>
+                        	   <small>The information you provide can help you get a better service.</small>
                         	</h3>
                             <?php
                             if(!empty($err))
                             {
-                                echo "<div class='alert alert-danger text-center'>කණගාටුයි.මෙම සේවාව ලබා ගැනීමට සදහන් කර ඇති කොරකුරු ලබා දිය යුතුය.</div>";
+                                echo "<div class='alert alert-danger text-center'>Sorry, you must provide the required label to access this service.</div>";
                             }
                             ?>
                     	</div>
@@ -357,6 +358,11 @@
 
 	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 	<script src="assets/js/jquery.validate.min.js"></script>
-
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </html>
 
