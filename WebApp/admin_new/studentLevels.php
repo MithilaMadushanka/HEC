@@ -1,10 +1,10 @@
 <?php
       session_start();
-      require_once("../phpModel/connection.php");
+      require_once("../php scripts/dbConnection.php");
       $name ="";
       $msg = 0;
       if (isset($_SESSION['user_id'])) {
-          $name = $_SESSION['name'];
+          $name = $_SESSION['full_name'];
       }
 
       if (isset($_GET['msg'])) {
@@ -37,7 +37,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Edumark Admin</title>
+      <title>Heart Engineering Class</title>
+      <link href="../img/logo.jpg" rel="icon">
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
@@ -111,20 +112,15 @@
                 <i class="mdi mdi-border-color menu-icon"></i>
               </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="uploadonlinelessons.php">
-                <span class="menu-title">Publish Online Lessons</span>
-                <i class="mdi mdi-cloud-upload menu-icon"></i>
-              </a>
+                  <a class="nav-link" href="studentLevels.php">
+                      <span class="menu-title">Student Level</span>
+                      <i class="mdi mdi-cloud-upload menu-icon"></i>
+                  </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="studentLevels.php">
-                <span class="menu-title">Control Student Levels</span>
-                <i class="mdi mdi-account menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../phpModel/logout.php">
+              <a class="nav-link" href="../php scripts/logout.php">
                 <span class="menu-title">SignOut</span>
                 <i class="mdi mdi-lock-open-outline menu-icon"></i>
               </a>
@@ -163,7 +159,7 @@
                       <div class="card">
                           <div class="card-body">
                               <h4>Add Control Student Levels</h4><br><br>
-                              <form class="forms-sample" method="post" action="../phpModel/addStudentLevel.php" enctype="multipart/form-data">
+                              <form class="forms-sample" method="post" action="../php scripts/addStudentLevel.php" enctype="multipart/form-data">
                                     <?php  if($msg ==505):?>
                                         <div class="alert alert-success" role="alert">
                                               Student Control Level Added Successfully!.
@@ -177,19 +173,12 @@
                                     <?php endif; ?>  
                                     <input type="hidden" name="user_id" value="">
                                     <div class="form-group row">
-                                        <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Grade</label>
+                                        <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Year</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="title" class="form-control" id="exampleInputUsername2" placeholder="Grade 9" required >
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                          <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Description</label>
-                                          <div class="col-sm-9">
-                                              <input type="text" name="description" class="form-control" id="exampleInputEmail2" placeholder="Your note Description" required >
-                                          </div>
-                                    </div>
-                                    
-                                    
+
                                     <button type="submit" class="btn btn-gradient-primary mr-2" name="sl_upload">Add</button>
                                     <button type="reset" class="btn btn-light">Cancel</button>
                               </form>

@@ -1,12 +1,13 @@
 <?php 
         include_once('../../php scripts/dbConnection.php');
-
+        session_start();
         $query;
         $result;
         $list;
+        $st_year=$_SESSION['stu_year'];
         $show="";
 
-        $query="SELECT *FROM images";
+        $query="SELECT *FROM images WHERE s_year=$st_year";
         $result=mysqli_query($con,$query);
 
         if ($result) {

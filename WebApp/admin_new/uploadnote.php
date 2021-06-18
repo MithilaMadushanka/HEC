@@ -3,9 +3,16 @@
       session_start();
 
       $msg=0;
+      $response=0;
       if (isset($_GET['msg'])) {
           $msg= $_GET['msg'];
       }
+
+     if (isset($_GET['dn_id'])) {
+        $response= $_GET['dn_id'];
+        $query = "DELETE FROM notes WHERE id=$response";
+        $result = mysqli_query($con,$query);
+     }
 
       $name ="";
       $id;
@@ -41,7 +48,7 @@
               $table.="<tr>";
               $table.="<td>".$rows['header']."</td>";
               $table.="<td>"."<a href='edituploadnote.php?note_id=".$rows['id']."'><span class='mdi mdi-eyedropper ' style='color:green;font-size:14px;''> Edit</span></a>".
-                    "<a href=''><span class='mdi mdi-close-circle ml-2' style='color:red;font-size:14px;''> Remove</span></a>".
+                    "<a href='uploadnote.php?dn_id=".$rows['id']."'><span class='mdi mdi-close-circle ml-2' style='color:red;font-size:14px;''> Remove</span></a>".
                   "</td>";
               $table.="</tr>";
           }

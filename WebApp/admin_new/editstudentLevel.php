@@ -1,5 +1,5 @@
 <?php
-      require_once('../phpModel/connection.php');
+      require_once('../php scripts/dbConnection.php');
       session_start();
 
       $msg=0;
@@ -30,22 +30,22 @@
 
               $p_id = $row['id'];
               $grade = $row['title'];
-              $description = $row['description'];
+              //$description = $row['description'];
               //$owner_name = $row['owner'];
           }
       }
 
       if (isset($_SESSION['user_id'])) {
-          $name = $_SESSION['name'];
+          $name = $_SESSION['full_name'];
           $id= $_SESSION['user_id'];
 
-          $query = "SELECT *FROM admin WHERE id=$id";
+          $query = "SELECT *FROM account WHERE id=$id";
           $result = mysqli_query($con,$query);
 
           if (mysqli_num_rows($result) > 0) {
               $row = mysqli_fetch_assoc($result);
               $email = $row['email'];
-              $contact = $row['contact_no'];
+              //$contact = $row['contact_no'];
               $user_name = $row['user_name'];
           }
       }
@@ -76,8 +76,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Edumark Admin</title>
-    <!-- plugins:css -->
+      <title>Heart Engineering Class</title>
+      <link href="../img/logo.jpg" rel="icon">
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
@@ -155,20 +155,15 @@
                 <i class="mdi mdi-border-color menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="uploadonlinelessons.php">
-                <span class="menu-title">Publish Online Lessons</span>
-                <i class="mdi mdi-cloud-upload menu-icon"></i>
-              </a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="studentLevels.php">
-                <span class="menu-title">Control Student Levels</span>
+                <span class="menu-title">Student Levels</span>
                 <i class="mdi mdi-account menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../phpModel/logout.php">
+              <a class="nav-link" href="../php scripts/logout.php">
                 <span class="menu-title">SignOut</span>
                 <i class="mdi mdi-lock-open-outline menu-icon"></i>
               </a>
@@ -209,7 +204,7 @@
                               <h4 class="card-title">Update Student Level Details</h4>
                               <!-- <p class="card-description"> Horizontal form layout </p> -->
                               <br><br>
-                              <form class="forms-sample" method="post" action="../phpModel/updatestudentLevel.php" enctype="multipart/form-data">
+                              <form class="forms-sample" method="post" action="../php scripts/updatestudentLevel.php" enctype="multipart/form-data">
                                     <?php  if($msg ==505):?>
                                         <div class="alert alert-success" role="alert">
                                               Paper Updated Successfully!.
@@ -228,14 +223,7 @@
                                             <input type="text" name="title" class="form-control" id="exampleInputUsername2" placeholder="Your note title" required  value=<?php echo $grade; ?>>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                          <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Description</label>
-                                          <div class="col-sm-9">
-                                              <label for="exampleInputEmail2" class="col-sm-9 col-form-label"><?php echo $description; ?></label>
-                                          </div>
-                                    </div>
-                                    
-                                    
+
                                     <!-- <div class="form-group row">
                                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Owner Name</label>
                                         <div class="col-sm-9">

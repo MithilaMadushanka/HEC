@@ -3,10 +3,18 @@
       session_start();
 
       $msg=0;
+      $response=0;
       if (isset($_GET['msg'])) {
           $msg= $_GET['msg'];
       }
 
+    if (isset($_GET['pr_id'])) {
+        $response= $_GET['pr_id'];
+        $query = "DELETE FROM papers WHERE id=$response";
+        $result = mysqli_query($con,$query);
+
+
+    }
       $name ="";
       $id;
       $email="";
@@ -41,7 +49,7 @@
               $table.="<tr>";
               $table.="<td>".$rows['header']."</td>";
               $table.="<td>"."<a href='edituploadpaper.php?paper_id=".$rows['id']."'><span class='mdi mdi-eyedropper ' style='color:green;font-size:14px;''> Edit</span></a>".
-                    "<a href=''><span class='mdi mdi-close-circle ml-2' style='color:red;font-size:14px;''> Remove</span></a>".
+                    "<a href='uploadpaper.php?pr_id=".$rows['id']."'><span class='mdi mdi-close-circle ml-2' style='color:red;font-size:14px;''> Remove</span></a>".
                   "</td>";
               $table.="</tr>";
           }

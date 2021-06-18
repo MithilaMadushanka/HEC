@@ -177,24 +177,24 @@
                 <i class="mdi mdi-border-color menu-icon"></i>
               </a>
             </li>
-<!--            <li class="nav-item">-->
-<!--              <a class="nav-link" href="uploadonlinelessons.php">-->
-<!--                <span class="menu-title">Publish Online Lessons</span>-->
-<!--                <i class="mdi mdi-cloud-upload menu-icon"></i>-->
-<!--              </a>-->
-<!--            </li>-->
+            <li class="nav-item">
+              <a class="nav-link" href="studentLevels.php">
+                <span class="menu-title">Student Level</span>
+                <i class="mdi mdi-cloud-upload menu-icon"></i>
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="approvels.php">
                 <span class="menu-title">Student Approvels</span>
                 <i class="mdi mdi-account menu-icon"></i>
               </a>
             </li>
-<!--            <li class="nav-item">-->
-<!--              <a class="nav-link" href="uploadbanner.php">-->
-<!--                <span class="menu-title">Upload Banners</span>-->
-<!--                <i class="mdi mdi-cloud-upload menu-icon"></i>-->
-<!--              </a>-->
-<!--            </li>-->
+            <li class="nav-item">
+              <a class="nav-link" href="registrations.php">
+                <span class="menu-title">Add Registrations</span>
+                <i class="mdi mdi-cloud-upload menu-icon"></i>
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="../php scripts/logout.php">
                 <span class="menu-title">SignOut</span>

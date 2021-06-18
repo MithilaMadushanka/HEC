@@ -8,17 +8,31 @@
         $pwd="";
         $notify=array();
         $notification=array();
+        $select_items="";
 
         $full_name="";
         $province="";
         $district="";
         $home_city="";
         $account_type="";
+        $s_year=0;
         $email="";
         $mobile_no="";
         $user_name="";
         $password="";
         $sender="mithilabandara97@gmail.com";
+
+        $query = "SELECT *FROM student_level WHERE is_deleted=0 ";
+        $result = mysqli_query($con,$query);
+
+        if (mysqli_num_rows($result) > 0) {
+
+            while ($row = mysqli_fetch_assoc($result)) {
+
+                $select_items.="<option value=".$row['title'].">".$row['title']."A/L</option>";
+
+            }
+        }
 
         if(isset($_POST['submit']))
         {
@@ -27,7 +41,7 @@
             $province=$_POST['country'];
             $district=$_POST['district'];
             $home_city=$_POST['home_city'];
-
+            $s_year = $_POST['stu_year'];
 
             $account_type="Student";
 
@@ -42,49 +56,73 @@
             }
             else
             {
-                //$result=createUser($full_name,$province,$district,$home_city,$account_type,$email,$mobile_no,$user_name,$password);
-                $pwd=sha1($password);
-
-                $query="INSERT INTO account(full_name,province,district,home_city,account_type,email,mobile_no,user_name,password,is_approved,is_deleted) VALUES('{$full_name}','{$province}','{$district}','{$home_city}','Student','{$email}','{$mobile_no}','{$user_name}','{$pwd}',0,0)";
-
-                $result=mysqli_query($con,$query);
-
-                if ($result) {
-                    $mail = new PHPMailer;
-                    $mail->isSMTP();
-                    $mail->Host = 'smtp.gmail.com';
-                    $mail->SMTPAuth = true;
-                    $mail->Username = $credential['user']  ;
-                    $mail->Password = $credential['pass']  ;
-                    $mail->SMTPSecure = 'tls';
-                    $mail->Port = 587;
-
-                    $mail->setFrom("hadawate.ingineru.panthiya@gmail.com");
-                    $mail->addAddress($email);
-                    $mail->addReplyTo('Your Request');
-                    $mail->addAttachment('assets/img/logo.jpg');
-                    $mail->isHTML(true);
-
-                    $email_subject = "Regarding your E Learning Account";
-                    $message ="Dear ".$full_name.","."<br><br>";
-                    $message.= "ඔබගේ ගිණුම අනුමත කර email පණිවිඩයකින් අප ඉදිරියේදී දැනුම් දෙන්නෙමු. එතෙක් ඔබගේ email පිළිබද අවධානයෙන් සිටින්න.";
-                    $message.="<br><br>ස්තූතියි.<br>";
-                    $message.="හදවතේ ඉංජීනේරූ පංතිය.<br>";
-                    $message.="<img src='../img/logo.jpg'>";
-
-                    $mail->Subject = $email_subject;
-                    $mail->Body    = "$message";
-                    $mail->AltBody = 'If you see this mail. please reload the page.';
-
-                    if(!$mail->send()) {
-                        $notify[]="Sorry, try again.";
-                    } else {
-                        $notification[]="We will notify you in the future with an email confirming your account. Until then, keep an eye on your email.";
-                    }
-
+                $query = "SELECT *FROM account WHERE email='$email' AND is_approved=0";
+                $result = mysqli_query($con,$query);
+                $query_next = "SELECT *FROM account WHERE email='$email' AND is_approved=1";
+                $result_next = mysqli_query($con,$query_next);
+                if(mysqli_num_rows($result) > 0)
+                {
+                    $notify[]="You already have the account. We will notify you in the future with an email confirming your account,please keep an eye on your email.";
+                }
+                elseif(mysqli_num_rows($result_next) >0)
+                {
+                    $notify[]="You already have account, you can't create another one";
                 }
                 else
-                    $notify[]="Unable to Add data!!";
+                {
+                    $query2 = "SELECT *FROM access_list WHERE reg_no='$user_name' AND is_deleted=0";
+                    $result = mysqli_query($con,$query2);
+                    if(mysqli_num_rows($result) <= 0)
+                    {
+                        $notify[]="Must have to enter your registration number in 'User name' field!";
+                    }
+                    else
+                    {
+                        //$result=createUser($full_name,$province,$district,$home_city,$account_type,$email,$mobile_no,$user_name,$password);
+                        $pwd=sha1($password);
+
+                        $query="INSERT INTO account(full_name,province,district,home_city,account_type,email,mobile_no,s_year,user_name,password,is_approved,is_deleted) VALUES('{$full_name}','{$province}','{$district}','{$home_city}','Student','{$email}','{$mobile_no}',{$s_year},'{$user_name}','{$pwd}',0,0)";
+
+                        $result=mysqli_query($con,$query);
+
+//                        if ($result) {
+////                            $mail = new PHPMailer;
+////                            $mail->isSMTP();
+////                            $mail->Host = 'smtp.gmail.com';
+////                            $mail->SMTPAuth = true;
+////                            $mail->Username = $credential['user']  ;
+////                            $mail->Password = $credential['pass']  ;
+////                            $mail->SMTPSecure = 'tls';
+////                            $mail->Port = 587;
+////
+////                            $mail->setFrom("hadawate.ingineru.panthiya@gmail.com");
+////                            $mail->addAddress($email);
+////                            $mail->addReplyTo('Your Request');
+////                            $mail->addAttachment('assets/img/logo.jpg');
+////                            $mail->isHTML(true);
+////
+////                            $email_subject = "Regarding your E Learning Account";
+////                            $message ="Dear ".$full_name.","."<br><br>";
+////                            $message.= "ඔබගේ ගිණුම අනුමත කර email පණිවිඩයකින් අප ඉදිරියේදී දැනුම් දෙන්නෙමු. එතෙක් ඔබගේ email පිළිබද අවධානයෙන් සිටින්න.";
+////                            $message.="<br><br>ස්තූතියි.<br>";
+////                            $message.="හදවතේ ඉංජීනේරූ පංතිය.<br>";
+////                            $message.="<img src='../img/logo.jpg'>";
+////
+////                            $mail->Subject = $email_subject;
+////                            $mail->Body    = "$message";
+////                            $mail->AltBody = 'If you see this mail. please reload the page.';
+////
+////                            if(!$mail->send()) {
+////                                $notify[]="Sorry, try again.";
+////                            } else {
+////                                $notification[]="We will notify you in the future with an email confirming your account. Until then, keep an eye on your email.";
+//                            }
+//
+//                        }
+//                        else
+//                            $notify[]="Unable to Add data!!";
+                    }
+                }
             }
             
         } 
@@ -295,6 +333,13 @@
                                                 <input type="text" class="form-control" placeholder="Type your moblie number" name="mobile_no" min="10" required>
 
                                           </div>
+                                      </div>
+                                      <div class="form-group">
+                                            <label>Study Year</label>
+                                            <select class="form-control" name="stu_year" required>
+                                               <option value="">Select Your Year</option>
+                                               <?php echo $select_items; ?>
+                                            </select>
                                       </div>
                                     </div>
                                     <div class="col-sm-5 col-sm-offset-1">

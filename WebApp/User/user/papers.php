@@ -1,12 +1,14 @@
 <?php 
         include_once('../../php scripts/dbConnection.php');
+        session_start();
 
         $query;
         $result;
         $list;
         $show="";
+        $st_year=$_SESSION['stu_year'];
 
-        $query="SELECT *FROM papers";
+        $query="SELECT *FROM papers WHERE s_year=$st_year";
         $result=mysqli_query($con,$query);
 
         if ($result) {

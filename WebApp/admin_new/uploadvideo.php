@@ -3,8 +3,17 @@
       session_start();
 
       $msg=0;
+      $response=0;
       if (isset($_GET['msg'])) {
           $msg= $_GET['msg'];
+      }
+
+      if (isset($_GET['dv_id'])) {
+          $response= $_GET['dv_id'];
+          $query = "DELETE FROM images WHERE id=$response";
+          $result = mysqli_query($con,$query);
+
+
       }
 
       $name ="";
@@ -14,6 +23,7 @@
       $user_name;
       $password;
       $select_op = "";
+      $select_items="";
 
       if (isset($_SESSION['user_id'])) {
           $name = $_SESSION['full_name'];
@@ -41,14 +51,24 @@
               $table.="<tr>";
               $table.="<td>".$rows['header']."</td>";
               $table.="<td>"."<a href='edituploadvideo.php?video_id=".$rows['id']."'><span class='mdi mdi-eyedropper ' style='color:green;font-size:14px;''> Edit</span></a>".
-                    "<a href=''><span class='mdi mdi-close-circle ml-2' style='color:red;font-size:14px;''> Remove</span></a>".
+                    "<a href='uploadvideo.php?dv_id=".$rows['id']."'><span class='mdi mdi-close-circle ml-2' style='color:red;font-size:14px;''> Remove</span></a>".
                   "</td>";
               $table.="</tr>";
           }
 
       }
 
+        $query = "SELECT *FROM student_level WHERE is_deleted=0 ";
+        $result = mysqli_query($con,$query);
 
+        if (mysqli_num_rows($result) > 0) {
+
+            while ($row = mysqli_fetch_assoc($result)) {
+
+                $select_items.="<option value=".$row['title'].">".$row['title']."A/L</option>";
+
+            }
+        }
 
 
  ?>
@@ -230,7 +250,13 @@
                                             <input type="text" name="video_link" class="form-control" id="exampleInputUsername2" placeholder="Your Video link" required >
                                         </div>
                                     </div>
-                                    
+                                    <div class="form-group">
+                                      <label>Study Year</label>
+                                      <select class="form-control" name="stu_year" required>
+                                          <option value="">Select Your Year</option>
+                                          <?php echo $select_items; ?>
+                                      </select>
+                                    </div>
                                     
                                     <button type="submit" class="btn btn-gradient-primary mr-2" name="v_upload">Upload</button>
                                     <button type="reset" class="btn btn-light">Cancel</button>

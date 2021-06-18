@@ -1,12 +1,13 @@
 <?php
         include_once('../../php scripts/dbConnection.php');
-
+        session_start();
         $query;
         $result;
         $list;
         $show="";
+        $st_year=$_SESSION['stu_year'];
 
-        $query="SELECT *FROM notes";
+        $query="SELECT *FROM notes WHERE s_year=$st_year";
         $result=mysqli_query($con,$query);
 
         if ($result) {

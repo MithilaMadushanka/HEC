@@ -7,6 +7,7 @@
 			$description = $_POST['description'];
 			$thubmail = $_FILES['thubmail']['name'];
 			$video_link = $_POST['video_link'];
+			$stu_year = $_POST['stu_year'];
 			$target_dir ="../admin_new/uploads/video/";
 
 			if ($thubmail !='') {
@@ -22,7 +23,7 @@
 
 					if (move_uploaded_file($_FILES['thubmail']['tmp_name'], $target_file)) {
 						
-						$query = "INSERT INTO images(header,description,tubmail,link) VALUES('$title','$description','$thubmail','$video_link')";
+						$query = "INSERT INTO images(header,description,tubmail,link,s_year) VALUES('$title','$description','$thubmail','$video_link',$stu_year)";
 						$result = mysqli_query($con,$query);
 
 						if ($result) {

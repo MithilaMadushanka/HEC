@@ -40,7 +40,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/loggin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -72,6 +72,15 @@
       <workItem from="1620016232325" duration="1740000" />
       <workItem from="1620019415276" duration="17456000" />
       <workItem from="1620042602409" duration="7791000" />
+      <workItem from="1620708788522" duration="1895000" />
+      <workItem from="1621234826173" duration="26000" />
+      <workItem from="1621694658378" duration="4337000" />
+      <workItem from="1621831819210" duration="166000" />
+      <workItem from="1622004063596" duration="5142000" />
+      <workItem from="1622194410479" duration="4568000" />
+      <workItem from="1622355648636" duration="705000" />
+      <workItem from="1622356548617" duration="7364000" />
+      <workItem from="1622705188287" duration="25000" />
     </task>
     <servers />
   </component>
@@ -91,10 +100,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="604" y="356" key="NewPhpFileDialog" timestamp="1620017239102">
+    <state x="604" y="356" key="NewPhpFileDialog" timestamp="1621696413006">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="604" y="356" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1620017239102" />
+    <state x="604" y="356" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1621696413006" />
     <state x="425" y="197" key="run.anything.popup" timestamp="1617111125914">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

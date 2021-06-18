@@ -44,6 +44,7 @@
                         $_SESSION['email']=$user['email'];
                         $_SESSION['user_name']=$user['user_name'];
                         $_SESSION['contact']=$user['mobile_no'];
+                        $_SESSION['stu_year']=$user['s_year'];
 
                         $user_id=$_SESSION['user_id'];
                         
